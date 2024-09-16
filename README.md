@@ -13,6 +13,3 @@ Hub:
 
 ### Notes
 Yaw is the body's orientation around the z-axis, left is 0 to -180, right is 0 to 180 -OR- It keeps increasing whilst turning clockwise, and decreasing whilst counter-clockwise.
-
-
->>>>>>> Stashed changes
