@@ -10,7 +10,7 @@ This script defines the steps to be taken to perform the Challenges in the 2024 
 |Niall        |         |
 |Lucas        |         |
 |Lazlo        |         |
-|             |         |
+|Ryan         |         |
 
 ## Steps
 
