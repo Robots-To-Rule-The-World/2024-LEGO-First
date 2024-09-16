@@ -1,10 +1,5 @@
 # 2024-LEGO-First
 This is our repo for storing the code and scripts for our entry into Lego First Robotics this year
-<<<<<<< Updated upstream
-=======
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
 
 ## Versioning Data
 App: 
@@ -17,13 +12,7 @@ Hub:
 
 
 ### Notes
-<<<<<<< Updated upstream
-Yaw is the body's orientation around the z-axis, left is 0 to -180, right is 0 to 180
-
-
-=======
 Yaw is the body's orientation around the z-axis, left is 0 to -180, right is 0 to 180 -OR- It keeps increasing whilst turning clockwise, and decreasing whilst counter-clockwise.
 
 
->>>>>>> Stashed changes
 >>>>>>> Stashed changes
