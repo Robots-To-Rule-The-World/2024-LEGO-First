@@ -4,7 +4,7 @@ import runloop, motor_pair, sys
 # cm, this is a constant for your robot
 WHEEL_CIRCUMFERENCE = 17.5
 # input must be in the same unit as WHEEL_CIRCUMFERENCE
-desired_degree = 0
+desired_degrees = 0
 
 def degreesForDistance(distance_cm):
     # Add multiplier for gear ratio if needed
