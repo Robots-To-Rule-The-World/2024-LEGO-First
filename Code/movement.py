@@ -58,7 +58,7 @@ async def spin_turn_ccw(degrees,speed):
     await runloop.until(motion_sensor.stable)
     motor_pair.stop(motor_pair.PAIR_1)
 
-async def  move_straight(distance):
+async def move_straight(distance):
     await motor_pair.move_for_degrees(motor_pair.PAIR_1, degreesForDistance(distance), 0)
 
 async def main():
