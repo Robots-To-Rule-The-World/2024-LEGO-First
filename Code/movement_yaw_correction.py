@@ -58,7 +58,7 @@ async def spin_turn_ccw(degrees,speed):
     await motor_pair.move_for_degrees(motor_pair.PAIR_1, degreesForDistance(0.1), 0)
 
 async def move_straight(distance, speed):
-   await motor_pair.move_for_degrees(motor_pair.PAIR_1, degreesForDistance(distance),0,velocity=-1*speed)
+    await motor_pair.move_for_degrees(motor_pair.PAIR_1, degreesForDistance(distance),0,velocity=-1*speed)
 
 async def main():
     # Drive Base 1
