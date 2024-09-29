@@ -62,11 +62,11 @@ async def main():
     motor_pair.pair(motor_pair.PAIR_1, port.D, port.E)
     motion_sensor.reset_yaw(0)
     await runloop.until(motion_sensor.stable)
-    #await move_straight(20,100) # (distance, speed)
+    
     #await spin_turn_cw(180,100) # (degrees to turn, speed)
-    #await move_straight(20,100)
     #await spin_turn_ccw(180,100)
-    await move_straight_corrected(15,500)
+    await move_straight_corrected(15,500) # (distance, speed) distance is arbitrary, must figure out by experimenation
+                                          # speed can be fast, but if you change speed it will affect distance, choose speed first
     await spin_turn_cw(45,200)
     await move_straight_corrected(16,300)
 
