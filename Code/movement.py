@@ -68,6 +68,6 @@ async def main():
     await runloop.until(motion_sensor.stable)
     await move_straight(40) # in cm 
     await spin_turn_ccw(70,200) # in degrees
-    sys.exit("Finished")
+    sys.exit(0)
 
 runloop.run(main())
