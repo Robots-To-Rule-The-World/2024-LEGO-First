@@ -11,30 +11,6 @@ def degreesForDistance(distance_cm):
     # Add multiplier for gear ratio if needed
     return int((distance_cm/WHEEL_CIRCUMFERENCE) * 360)
 
-async def move_straight_corrected(distance,speed):
-    # convert arc to wheel rotation
-    revolutions = distance / (math.pi*wheel_diameter)
-    # convert radians to degrees
-    wheel_degrees = int (revolutions * 360)
-    motor_pair.unpair(motor_pair.PAIR_1)#need to unpair to reverse direction of bot
-    motor_pair.pair(motor_pair.PAIR_1, port.E, port.D) #reverse direction
-    error = 0
-    correction = 0
-    target_counter = distance * 400# Target based on distance characterization
-    counter = 0 # Start from 0
-    starting_position = motor.reset_relative_position
-    motion_sensor.reset_yaw(0)#set starting yaw angle
-    while counter <= target_counter:
-        error = motion_sensor.tilt_angles()[0]
-        correction = error#can add some offset to correction, but leaving it as the same as the drifted angle works well
-        motor_pair.move_tank(motor_pair.PAIR_1,int(speed+correction),int(speed-correction))
-        #motor_pair.move_tank_for_degrees(motor_pair.PAIR_1,wheel_degrees,-1*int(speed+correction),-1*int(speed-correction))
-        #motor_pair.move_tank_for_time(motor_pair.PAIR_1,int(speed+correction),int(speed-correction),straight_time)
-        counter += 1
-    motor_pair.stop(motor_pair.PAIR_1)
-    motor_pair.unpair(motor_pair.PAIR_1) #reset back to default for turns
-    motor_pair.pair(motor_pair.PAIR_1, port.D, port.E)
-
 #These functions work well with yaw correction
 async def spin_turn_cw(degrees,speed):
     motion_sensor.reset_yaw(0)
