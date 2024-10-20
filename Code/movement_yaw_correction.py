@@ -40,14 +40,12 @@ async def main():
     await runloop.until(motion_sensor.stable)
 
     #put your code here, use
-    # spin_turn_cw(degrees to turn, speed) to turn clockwise or right
-    # sping_turn_ccw(degrees to turn, speed) to turn counter clockwise or left
-    # move_straight_corrected(distance, speed) to go straight with some correction, good for long straights
-    # note - don't change the speed after you have set your distance! changing the speed will affect your distance 
+    # await spin_turn_cw(degrees to turn, speed) to turn clockwise or right
+    # await spin_turn_ccw(degrees to turn, speed) to turn counter clockwise or left
+    # await move_straight(distance in cm, speed) to go straight, you can use a negative speed to go backwards
 
     #Example:
-    #await move_straight_corrected(15,500) # (distance, speed) distance is arbitrary, must figure out by experimenation
-                                          # speed can be fast, but if you change speed it will affect distance, choose speed first
+    #await move_straight(45,500)
     #await spin_turn_cw(45,200)
     #await move_straight_corrected(16,300)
 
