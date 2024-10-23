@@ -37,17 +37,7 @@ async def main():
     # Reset Base 1, do not change these lines
     motor_pair.pair(motor_pair.PAIR_1, port.D, port.E)
     motion_sensor.reset_yaw(0)
-    await runloop.until(motion_sensor.stable)
 
-    #put your code here, use
-    # await spin_turn_cw(degrees to turn, speed) to turn clockwise or right
-    # await spin_turn_ccw(degrees to turn, speed) to turn counter clockwise or left
-    # await move_straight(distance in cm, speed) to go straight, you can use a negative speed to go backwards
-
-    #Example:
-    #await move_straight(45,500)
-    #await spin_turn_cw(45,200)
-    #await move_straight_corrected(16,300)
 
     sys.exit(0)
 
