@@ -66,7 +66,7 @@ async def main():
     # Drive Base 1
     motor_pair.pair(motor_pair.PAIR_1, port.C, port.D)
     motion_sensor.reset_yaw(0)
-    await runloop.until(motion_sensor.stable)
+    #await runloop.until(motion_sensor.stable)
     runloop.sleep_ms(100)
     #going forward
     await move_straight(46,600)
