@@ -1,5 +1,5 @@
 from hub import port, motion_sensor
-import runloop, motor, motor_pair, sys
+import runloop, motor, motor_pair, sys, time
 
 # cm, this is a constant for your robot
 WHEEL_CIRCUMFERENCE = 17.5
@@ -60,7 +60,7 @@ async def squid():
     # move to squid dropoff
     await spin_turn_ccw(35, TURN_SPEED)
     await move_straight_forward(30)
-    await spin_turn_cw(46, TURN_SPEED)
+    await spin_turn_cw(48, TURN_SPEED)
     await move_straight_forward(30)
 
     # drop off the squid
@@ -72,7 +72,11 @@ async def main():
     # Drive Base 1
     motor_pair.pair(motor_pair.PAIR_1, MOTOR_LEFT, MOTOR_RIGHT)
     motion_sensor.reset_yaw(0)
-    await runloop.until(motion_sensor.stable)
+
+    # maybe keep this commented? 
+    # await runloop.until(motion_sensor.stable)
+
+    start_time = time.time()
 
     # get the squid
     # align center of black recatngle with central radial pip
@@ -91,6 +95,14 @@ async def main():
     await lift_cage()
     await move_straight_forward(10)
     await lower_cage()
+
+    await move_straight_backward(20)
+    await spin_turn_ccw(45, TURN_SPEED)
+    await move_straight_backward(30)
+
+    end_time = time.time()
+    elapsed_time = end_time - start_time
+
     sys.exit(0)
 
 runloop.run(main())
