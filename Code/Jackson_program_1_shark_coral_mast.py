@@ -43,7 +43,7 @@ async def main():
     # Reset Base 1, do not change these lines
     motor_pair.pair(motor_pair.PAIR_1, port.C, port.D)
     motion_sensor.reset_yaw(0)
-    
+
     await raise_arm(500)
 
     #go forward
@@ -59,7 +59,7 @@ async def main():
     #yeet shark
     await lower_arm(2000)
 
-    await runloop.sleep_ms(1000)
+    await runloop.sleep_ms(500)
 
     #raise arm back up
     await raise_arm(600)
@@ -74,7 +74,7 @@ async def main():
     #raise mast
     await spin_turn_cw(90,300)
     await lower_arm(2000)
-    await move_straight(10,600)
+    await move_straight(9,600)
     await spin_turn_ccw(10,300)
     await raise_arm(2000)
 
