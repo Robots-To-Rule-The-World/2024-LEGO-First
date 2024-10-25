@@ -6,8 +6,8 @@ WHEEL_CIRCUMFERENCE = 17.5
 # input must be in the same unit as WHEEL_CIRCUMFERENCE
 
 
-TURN_SPEED = 35
-VELOCITY = 500
+TURN_SPEED = 100
+VELOCITY = 750
 CAGE_HEIGHT = 60
 
 MOTOR_LEFT = port.C
@@ -68,18 +68,22 @@ async def squid():
     await move_straight_backward(15)
     await lower_cage()
 
+async def forward_get():
+    await lift_cage()
+    await move_straight_forward(30)
+    await lower_cage()
+
+
 async def main():
     # Drive Base 1
     motor_pair.pair(motor_pair.PAIR_1, MOTOR_LEFT, MOTOR_RIGHT)
     motion_sensor.reset_yaw(0)
-
-    # maybe keep this commented? 
-    # await runloop.until(motion_sensor.stable)
+    await runloop.until(motion_sensor.stable)
 
     start_time = time.time()
 
-    # get the squid
-    # align center of black recatngle with central radial pip
+    # # get the squid
+    # # align center of black recatngle with central radial pip
     await squid()
 
     # move back to get in line with krill
@@ -87,21 +91,33 @@ async def main():
     await move_straight_backward(35)
     await spin_turn_cw(43, TURN_SPEED)
 
+    # grab the first two krill
     await lift_cage()
     await move_straight_forward(50)
     await lower_cage()
 
+    # grab the second krill
     await spin_turn_cw(30, TURN_SPEED)
     await lift_cage()
     await move_straight_forward(10)
     await lower_cage()
 
+    # get third krill and GET OUT
     await move_straight_backward(20)
-    await spin_turn_ccw(45, TURN_SPEED)
-    await move_straight_backward(30)
+    await spin_turn_ccw(70, TURN_SPEED)
+    await move_straight_forward(32)
+    await spin_turn_ccw(48, TURN_SPEED)
+    await move_straight_forward(50)
+    await spin_turn_ccw(15, TURN_SPEED)
+    await forward_get()
+
+    await spin_turn_ccw(40, TURN_SPEED)
+    await move_straight_forward(75)
+
 
     end_time = time.time()
     elapsed_time = end_time - start_time
+    # print(f'Time to run: {elapsed_time}')
 
     sys.exit(0)
 
