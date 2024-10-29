@@ -1,15 +1,11 @@
 # 2024-LEGO-First
 This is our repo for storing the code and scripts for our entry into Lego First Robotics this year
-
-## Versioning Data
-App: 
-    [Current Version: 3.4.3 (Link is for all targets)](https://education.lego.com/en-us/downloads/spike-app/software/)
-
-Hub:
-    According to [this page](https://education.lego.com/en-us/product-resources/spike-prime/downloads/software-updates/#hubos-updates) the App will indicate that the Hub needs updating when they connect.
-
+    
 ## Setup
+[Pybricks]() is the current platform we're using, which has it's own IDE. 
+
+[Using Pybricks with VSCode](https://pybricks.com/project/pybricks-other-editors/) can also work, and this link helps enable that.
 
 
-### Notes
-Yaw is the body's orientation around the z-axis, left is 0 to -180, right is 0 to 180 -OR- It keeps increasing whilst turning clockwise, and decreasing whilst counter-clockwise.
+
+
