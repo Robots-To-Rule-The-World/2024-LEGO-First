@@ -13,6 +13,6 @@ while ready != True:
 
 # Eb Bb F Bb Eb Bb G Eb Bb
 
-song = ["Eb5/8", "Bb4/8", "F5/8", "Bb4/8", "Eb5/8", "Bb4/16", "G5/16", "Eb5/8", "Bb4/8"]
+song = ["Eb5/8", "Bb4/8", "F5/8", "Bb4/8", "Eb5/8", "Bb4/8", "G5/16", "Eb5/16", "Bb4/8"]
 
 hub.speaker.play_notes(song)
