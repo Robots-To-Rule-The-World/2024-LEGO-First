@@ -1,4 +1,12 @@
 {
     "wheel_diameter": "87",
-    "drive_base": "110"
+    "axle_width": "110",
+    "drive_base": {
+        "left": "Port.C",
+        "right": "Port.D"
+    },
+    "motors": {
+        "grabber": "Port.B",
+        "gearbox": "Port.A"
+    }
 }
