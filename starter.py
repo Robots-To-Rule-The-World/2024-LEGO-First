@@ -29,8 +29,8 @@ def InitializeRobot():
 
     motor_left_C = Motor(Port.C,Direction.COUNTERCLOCKWISE)
     motor_right_D = Motor(Port.D,Direction.CLOCKWISE)
-    b = DriveBase(motor_left_C, motor_right_D, WHEEL_DIAMETER, DRIVER_BASE)
-    return (hub, b)
+    bot = DriveBase(motor_left_C, motor_right_D, WHEEL_DIAMETER, DRIVER_BASE)
+    return (hub, bot)
 
 def InitializeMotors():
     front_motor = Motor(Port.A, Direction.CLOCKWISE)
@@ -96,7 +96,16 @@ await pinchy.run_time(1000, 2000, Stop.HOLD)
 
 """
 
+##########################
+# INSERT YOUR CODE BELOW #
+##########################
 song = ["Eb5/8", "Bb4/8", "F5/8", "Bb4/8", "Eb5/8", "Bb4/8", "G5/16", "Eb5/16", "Bb4/8"]
 hub.speaker.play_notes(song)
+
+# forward
+bot.straight(100, Stop.BRAKE)
+# backward
+bot.straight(-100, Stop.BRAKE)
+
 
 # LET'S GOOOOOOOOOOOOOOOOO
