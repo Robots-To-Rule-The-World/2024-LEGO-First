@@ -88,3 +88,22 @@ run_task(main())
 # stop the clock and get the time
 end = sw.time()
 print("main took {} seconds".format(end))
+
+async def CANT_STOP_WONT_STOP(length, funk, *args):
+    ready = hub.imu.ready()
+    bouncer = StopWatch()
+    await funk(args)
+    while ready != True:
+        ready = hub.imu.ready()
+        bounce = bouncer.time()
+        if bounce > length:
+            break
+
+    # await     while ready != True:
+    #     ready = hub.imu.ready()
+    #     print("waiting")
+    #     wait(3)   
+    # bouncer = StopWatch()
+    # bounce = bouncer.time()
+    # while bounce < length:
+            
