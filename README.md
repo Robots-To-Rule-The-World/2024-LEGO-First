@@ -1,4 +1,4 @@
-![a kaiju chicken eats the world](./chicken.webp)
+![a kaiju chicken eats the world](./FLAMING_CHICKENS_BANNER_HIGH_REZ.png)
 
 # THE FLAMING CHICKENS
 The Flaming Chickens are a Chapel Hill based First Lego League Robotics Team!
