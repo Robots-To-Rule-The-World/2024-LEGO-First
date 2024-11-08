@@ -99,63 +99,19 @@ await pinchy.run_time(1000, 2000, Stop.HOLD)
 ##########################
 # INSERT YOUR CODE BELOW #
 ##########################
-song = ["Eb5/8", "Bb4/8", "F5/8", "Bb4/8", "Eb5/8", "Bb4/8", "G5/16", "Eb5/16", "Bb4/8"]
-#hub.speaker.play_notes(song)
-bot.use_gyro(True)
-#bot.settings(100, 100, 100, 100)
-bot.settings(400)
-'''# forward
-bot.straight(100, Stop.BRAKE)
-# backward
-bot.straight(-100, Stop.BRAKE)'''
 
 async def dump():
     await front.run_time(-1500,800,Stop.HOLD)
     await front.run_time(1500,800)
-    
+
 async def Run():
-    '''
-    await bot.straight(250, Stop.HOLD)
-    await bot.turn(-45, Stop.HOLD)
-    await bot.straight(350, Stop.HOLD)
-    await bot.turn(90, Stop.HOLD)
-    await bot.straight(280, Stop.HOLD)
-    await dump()
-    '''
-    await bot.straight(200, Stop.HOLD)
-    await bot.turn(-45, Stop.HOLD)
-    bot.settings(300)
-    await bot.curve(325,100,Stop.HOLD) #325 was orig
-    
-    #slow down a little
-    bot.settings(200)
-    await bot.turn(-30,Stop.HOLD)
-    await dump()
-
-    #go to base V
-    bot.settings(600)
-    await bot.curve(-338,70,Stop.HOLD)
-    bot.settings(1000)
-    await bot.curve(759,-55,Stop.HOLD)
-    await bot.straight(300,Stop.HOLD)
+    bot.settings(500)
+    #await bot.curve(160,140,Stop.HOLD)
+    await bot.straight(80,Stop.HOLD)
     await bot.turn(20,Stop.HOLD)
-
-    #final turn home
-    await bot.curve(435,-140,Stop.HOLD)
-
-    
-    
-    #await bot.turn(-55,Stop.HOLD)
-    #await bot.straight(300,Stop.HOLD)
-   
-    #await bot.curve(2000,90,Stop.HOLD)
-    #await bot.straight(800,Stop.HOLD)
-
+    await dump()
 
 run_task(Run())
-
-
-
 
 
 # LET'S GOOOOOOOOOOOOOOOOO
