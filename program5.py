@@ -125,7 +125,7 @@ async def Run():
     await bot.straight(200, Stop.HOLD)
     await bot.turn(-45, Stop.HOLD)
     bot.settings(300)
-    await bot.curve(325,100,Stop.HOLD) #325 was orig
+    await bot.curve(325,100,Stop.HOLD) #325 was orig,100 was orign degrees
     
     #slow down a little
     bot.settings(200)
@@ -141,7 +141,7 @@ async def Run():
     await bot.turn(20,Stop.HOLD)
 
     #final turn home
-    await bot.curve(435,-140,Stop.HOLD)
+    await bot.curve(500,-120,Stop.HOLD)
 
     
     
